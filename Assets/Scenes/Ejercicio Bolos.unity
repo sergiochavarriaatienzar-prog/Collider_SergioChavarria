@@ -1646,7 +1646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc4d1e414354264c97bbd88e619ef0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuerzaTiro: 750
+  fuerzaTiro: 900
   velRotacion: 100
   rayoDistancia: 10
 --- !u!54 &1721826620

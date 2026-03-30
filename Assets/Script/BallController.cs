@@ -10,11 +10,14 @@ public class BallController : MonoBehaviour
     public float velRotacion = 100f;
     public float rayoDistancia = 10f;
     private LineRenderer line;
+    private Quaternion startRotation;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
+        startRotation = transform.rotation;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         line = GetComponent<LineRenderer>();
     }
 
@@ -47,5 +50,7 @@ public class BallController : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.position = startPosition;
+        transform.rotation = Quaternion.Euler(0, startRotation.eulerAngles.y, 0);
+        line.enabled = true;
     }
 }
